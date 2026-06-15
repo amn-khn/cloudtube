@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiniTube</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Roboto',sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+header{
+height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+background:#202020;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+border-bottom:1px solid #333;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:red;
+}
+
+.logo span{
+color:white;
+}
+
+.search-box{
+display:flex;
+width:50%;
+}
+
+.search-box input{
+width:100%;
+padding:12px;
+background:#121212;
+border:1px solid #303030;
+color:white;
+border-radius:30px 0 0 30px;
+outline:none;
+}
+
+.search-box button{
+padding:12px 20px;
+background:#303030;
+border:none;
+color:white;
+cursor:pointer;
+border-radius:0 30px 30px 0;
+}
+
+.profile{
+width:40px;
+height:40px;
+background:#ff0000;
+border-radius:50%;
+}
+
+.container{
+display:flex;
+margin-top:60px;
+}
+
+.sidebar{
+width:240px;
+height:100vh;
+background:#181818;
+position:fixed;
+padding-top:20px;
+}
+
+.sidebar a{
+display:block;
+padding:15px 25px;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+background:#303030;
+border-radius:10px;
+}
+
+.content{
+margin-left:250px;
+padding:20px;
+width:100%;
+}
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+gap:25px;
+}
+
+.video-card{
+cursor:pointer;
+transition:0.3s;
+}
+
+.video-card:hover{
+transform:scale(1.03);
+}
+
+.thumbnail{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.video-info{
+display:flex;
+margin-top:10px;
+}
+
+.channel-icon{
+width:40px;
+height:40px;
+background:red;
+border-radius:50%;
+margin-right:10px;
+}
+
+.video-text h3{
+font-size:16px;
+margin-bottom:5px;
+}
+
+.video-text p{
+font-size:14px;
+color:#aaa;
+}
+
+.featured{
+margin-bottom:40px;
+background:linear-gradient(
+135deg,
+#ff0000,
+#ff5e00
+);
+padding:20px;
+border-radius:15px;
+}
+
+.featured h1{
+margin-bottom:15px;
+}
+
+.featured video{
+width:100%;
+border-radius:15px;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+display:none;
+}
+
+.content{
+margin-left:0;
+}
+
+.search-box{
+width:70%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Mini<span>Tube</span>
+</div>
+
+<div class="search-box">
+<input type="text" placeholder="Search">
+<button>🔍</button>
+</div>
+
+<div class="profile"></div>
+
+</header>
+
+<div class="container">
+
+<div class="sidebar">
+<a href="#">🏠 Home</a>
+<a href="#">🔥 Trending</a>
+<a href="#">🎵 Music</a>
+<a href="#">🎮 Gaming</a>
+<a href="#">📺 Subscriptions</a>
+<a href="#">📚 Library</a>
+<a href="#">🕒 History</a>
+</div>
+
+<div class="content">
+
+<div class="featured">
+<h1>Featured Video</h1>
+
+<video controls>
+<source src="videos/sample-10s.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<div class="video-grid">
+
+<div class="video-card">
+
+<video class="thumbnail" controls>
+<source src="videos/sample-5s.mp4" type="video/mp4">
+</video>
+
+<div class="video-info">
+<div class="channel-icon"></div>
+
+<div class="video-text">
+<h3>Amazing Nature Video</h3>
+<p>Nature Channel • 1M views • 1 day ago</p>
+</div>
+
+</div>
+</div>
+
+<div class="video-card">
+
+<video class="thumbnail" controls>
+<source src="videos/sample-10s.mp4" type="video/mp4">
+</video>
+
+<div class="video-info">
+<div class="channel-icon"></div>
+
+<div class="video-text">
+<h3>Travel Documentary</h3>
+<p>Travel World • 500K views • 2 days ago</p>
+</div>
+
+</div>
+</div>
+
+<div class="video-card">
+
+<video class="thumbnail" controls>
+<source src="videos/sample-5s.mp4" type="video/mp4">
+</video>
+
+<div class="video-info">
+<div class="channel-icon"></div>
+
+<div class="video-text">
+<h3>Wildlife Adventure</h3>
+<p>Discovery HD • 2M views • 3 days ago</p>
+</div>
+
+</div>
+</div>
+
+<div class="video-card">
+
+<video class="thumbnail" controls>
+<source src="videos/sample-10s.mp4" type="video/mp4">
+</video>
+
+<div class="video-info">
+<div class="channel-icon"></div>
+
+<div class="video-text">
+<h3>Beautiful Landscapes</h3>
+<p>4K World • 800K views • 5 days ago</p>
+</div>
+
+</div>
+</div>
+
+<div class="video-card">
+
+<video class="thumbnail" controls>
+<source src="videos/sample-5s.mp4" type="video/mp4">
+</video>
+
+<div class="video-info">
+<div class="channel-icon"></div>
+
+<div class="video-text">
+<h3>Tech Review 2026</h3>
+<p>Tech Guru • 900K views • 1 week ago</p>
+</div>
+
+</div>
+</div>
+
+<div class="video-card">
+
+<video class="thumbnail" controls>
+<source src="videos/sample-10s.mp4" type="video/mp4">
+</video>
+
+<div class="video-info">
+<div class="channel-icon"></div>
+
+<div class="video-text">
+<h3>Top Programming Tips</h3>
+<p>Code Academy • 300K views • 2 weeks ago</p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
